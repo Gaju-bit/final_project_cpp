@@ -11,6 +11,9 @@ class FinalProject
 {
 	public:
 	int id;
+	/**creating the data structures to store the values
+     *intializing global variable
+     * */
     string destinationICAOCode,sourceICAOCode, destinationIATACode, sourceIATACode, sourceAirportID, destinationAirportID;
 	string destination_country,destination_city, source_country,source_city;
     vector<vector<string>> airportinfo;
@@ -25,6 +28,10 @@ class FinalProject
 	
 
     void setCurrentRoute(){
+		/**getting inputs from the user
+     *start country and city
+     * destination country and city
+     * */
         cout<<"Enter the start country: ";
         cin>>source_country;
 
@@ -39,6 +46,14 @@ class FinalProject
         
     }
 
+
+
+
+	/**getting data from the airport.csv file
+     * then using the inputs from the user for start and destination with and statement
+     * got the airports from the source country and destination country
+     * also got the number of stops from the route file and using a four loop i got the total number of stops for all the route
+     * */
 	void readfile(){
 		//calling the setCurrentRoute function to take inputs
 		setCurrentRoute();
@@ -105,10 +120,19 @@ class FinalProject
 		
 	}
 
+	/**create setters  the start route of the user
+     *using the start and destination from the airport class
+     * getting data from the route.csv file
+     * then using the airport ID for start and destination with and statement
+     * and the start and destination airport ID to compare with the start and destination Airport ID from the route file
+     * i then got the airports route from start airport to the destination Airport
+     * also got the number of stops from the route file and using a four loop i got the total number of stops for all the route
+     * */
+
 	void airlines()
 	{
 
-		/// @brief this function reads the route csv file to find the all routes that lead from the source to destination city
+		//this function reads the route csv file to find the all routes that lead from the source to destination city
 		
 		//reading the routes.scv file
 		readfile();
